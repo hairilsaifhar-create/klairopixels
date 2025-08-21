@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
+
+#frame1 {
+  width: 1700px;      
+  height: 1550px;      
+  object-fit: cover; 
+  display: block;            /* biar bisa pakai margin auto */
+  margin: -200px auto 0 auto; /* auto center + geser naik */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  
+}#frame1tulisan{
+     position: absolute;
+  top: 50%;       /* tengah secara vertikal */
+  left: 50%;      /* tengah secara horizontal */
+  transform: translate(-50%, -50%);
+  color: rgb(231, 160, 255);   /* warna teks */
+  font-size: 70px;
+  font-family: "Pixelify Sans", sans-serif;
+  text-shadow: 2px 2px 4px black; /* biar tetap terbaca */
+  text-align: center;
+  width: 80%;     /* biar teks nggak keluar gambar */
+}.planet-wrapper {
+  text-align: center;   /* kunci agar isi di tengah */
+}
+
+#tombolplanet {
+  width: 350px;      
+  height: 300px;      
+  object-fit: cover; 
+  display: block;            
+  margin: 170px auto 0 auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  animation: spin 12s linear infinite, float 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-50px); }
+}
+
+#perintahtombol {
+  margin-top: 20px; /* jarak dari planet */
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ff00ff;
+}
+
+
+#rumputhalaman1{
+width: 1400px;      
+  height: 1200px;      
+  object-fit: cover; 
+  display: block;            /* biar bisa pakai margin auto */
+  margin: 200px auto 0 auto; /* auto center + geser naik */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+ 
+}
+
