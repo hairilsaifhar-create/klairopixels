@@ -1,40 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
 
+/* ==== Gambar Utama ==== */
 #frame1 {
-  width: 1700px;      
-  height: 1550px;      
-  object-fit: cover; 
-  display: block;            /* biar bisa pakai margin auto */
-  margin: -200px auto 0 auto; /* auto center + geser naik */
+  width: 100%;        /* ikuti lebar layar */
+  max-width: 1700px;  /* tapi maksimal 1700px */
+  height: auto;       /* biar proporsional */
+  display: block;
+  margin: 0 auto;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  
-}#frame1tulisan{
-     position: absolute;
-  top: 50%;       /* tengah secara vertikal */
-  left: 50%;      /* tengah secara horizontal */
+  position: relative;
+}
+
+/* ==== Tulisan di Tengah ==== */
+#frame1tulisan {
+  position: absolute;
+  top: 50%;      
+  left: 50%;     
   transform: translate(-50%, -50%);
-  color: rgb(231, 160, 255);   /* warna teks */
-  font-size: 70px;
+  color: rgb(231, 160, 255);
+  font-size: 4vw; /* otomatis mengecil di HP */
   font-family: "Pixelify Sans", sans-serif;
-  text-shadow: 2px 2px 4px black; /* biar tetap terbaca */
+  text-shadow: 2px 2px 4px black;
   text-align: center;
-  width: 80%;     /* biar teks nggak keluar gambar */
-}.planet-wrapper {
-  text-align: center;   /* kunci agar isi di tengah */
+  width: 90%;
+}
+
+/* ==== Tombol Planet ==== */
+.planet-wrapper {
+  text-align: center;
+  margin-top: 5%;
 }
 
 #tombolplanet {
-  width: 350px;      
-  height: 300px;      
-  object-fit: cover; 
+  width: 30vw;       /* relatif ke layar */
+  max-width: 350px;  /* tidak lebih besar dari 350px */
+  height: auto;      
   display: block;            
-  margin: 170px auto 0 auto;
+  margin: 50px auto 0 auto;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   animation: spin 12s linear infinite, float 3s ease-in-out infinite;
 }
 
+/* Animasi */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
@@ -42,26 +51,35 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-50px); }
+  50%      { transform: translateY(-30px); }
 }
 
+/* ==== Tulisan tombol ==== */
 #perintahtombol {
-  margin-top: 20px; /* jarak dari planet */
+  margin-top: 15px;
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 35px;
+  font-size: 3vw;
   font-weight: bold;
   color: #ff00ff;
 }
 
-
-#rumputhalaman1{
-width: 1400px;      
-  height: 1200px;      
-  object-fit: cover; 
-  display: block;            /* biar bisa pakai margin auto */
-  margin: 200px auto 0 auto; /* auto center + geser naik */
+/* ==== Gambar Rumput ==== */
+#rumputhalaman1 {
+  width: 100%;       /* penuh layar */
+  max-width: 1400px; 
+  height: auto;
+  display: block;
+  margin: 50px auto 0 auto;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
- 
 }
 
+/* ==== Tambahan Media Query (khusus HP kecil) ==== */
+@media (max-width: 600px) {
+  #frame1tulisan {
+    font-size: 6vw;
+  }
+  #perintahtombol {
+    font-size: 5vw;
+  }
+}
